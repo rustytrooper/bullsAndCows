@@ -22,3 +22,5 @@ export const isValidGuess = (guess: string, length: number, base: Base): boolean
   const hasUniqueChars = new Set([...guess].map((c) => c.toLowerCase())).size === guess.length;
   return hasValidLength && hasOnlyAllowedChars && hasUniqueChars;
 };
+
+export const evaluateGuess = () => {};

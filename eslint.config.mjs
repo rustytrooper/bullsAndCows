@@ -15,6 +15,7 @@ export default tseslint.config(
           'vitest.config.ts',
           'tests/createDigitValidator.test.ts',
           'tests/isValidQuess.test.ts',
+          'tests/evaluateGuess.test.ts'
     ],
         },
         tsconfigRootDir: import.meta.dirname,
