@@ -36,3 +36,5 @@ export const evaluateGuess = (secret: string, guess: string): BullsCows => {
 
   return { bulls: bulls.length, cows: cows.length };
 };
+
+export const countPossibleSecrets = () => {};
