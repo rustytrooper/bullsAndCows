@@ -37,4 +37,23 @@ export const evaluateGuess = (secret: string, guess: string): BullsCows => {
   return { bulls: bulls.length, cows: cows.length };
 };
 
-export const countPossibleSecrets = () => {};
+const cache = new Map<string, number>();
+const BASE_SIZE: Record<Base, number> = { bin: 2, oct: 8, dec: 10, hex: 16 };
+
+const countRecursive = (length: number, available: number): number => {
+  if (length === 0) return 1;
+  if (available < length) return 0;
+  return available * countRecursive(length - 1, available - 1);
+};
+
+export const countPossibleSecrets = (length: number, base: Base): number => {
+  const key = length + ':' + base;
+
+  if (cache.has(key)) {
+    return cache.get(key) as number;
+  }
+
+  const result = countRecursive(length, BASE_SIZE[base]);
+  cache.set(key, result);
+  return result;
+};
