@@ -1,4 +1,4 @@
-import { Base } from '../types';
+import { Base, BullsCows } from '../types';
 
 const DIGITS_BY_BASE: Record<Base, ReadonlySet<string>> = {
   bin: new Set('01'),
@@ -23,4 +23,16 @@ export const isValidGuess = (guess: string, length: number, base: Base): boolean
   return hasValidLength && hasOnlyAllowedChars && hasUniqueChars;
 };
 
-export const evaluateGuess = () => {};
+export const evaluateGuess = (secret: string, guess: string): BullsCows => {
+  const secretChars = [...secret.toLowerCase()];
+  const guessChars = [...guess.toLowerCase()];
+
+  const bulls = guessChars.filter((c, i) => c === secretChars[i]);
+
+  const remainingGuess = guessChars.filter((c, i) => c !== secretChars[i]);
+  const remainingSecret = secretChars.filter((c, i) => c !== guessChars[i]);
+
+  const cows = remainingGuess.filter((c) => remainingSecret.includes(c));
+
+  return { bulls: bulls.length, cows: cows.length };
+};
