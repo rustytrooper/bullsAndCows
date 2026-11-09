@@ -7,6 +7,7 @@
     "build": "tsc",
     "test": "vitest run --passWithNoTests",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "prepare": "husky"
   },
@@ -21,7 +22,7 @@
     "url": "git+https://github.com/rustytrooper/bullsAndCows.git"
   },
   "keywords": [],
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/rustytrooper/bullsAndCows/issues"
   },

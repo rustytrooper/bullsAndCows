@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { createDigitValidator } from '../core/core';
-import { Base } from '../types';
+import { createDigitValidator } from '../src/core/core';
+import { Base } from '../src/types';
 
 describe('createDigitValidator', () => {
   it('returns a function (predicate)', () => {
