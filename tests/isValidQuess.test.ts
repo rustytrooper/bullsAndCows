@@ -16,8 +16,8 @@ describe('isValidGuess', () => {
 
   describe('allowed characters check', () => {
     it('rejects chars not allowed in bin', () => {
-      expect(isValidGuess('02', 2, 'bin')).toBe(false);
-      expect(isValidGuess('12', 2, 'bin')).toBe(true);
+      expect(isValidGuess('12', 2, 'bin')).toBe(false);
+      expect(isValidGuess('10', 2, 'bin')).toBe(true);
     });
     it('rejects letters in dec', () => {
       expect(isValidGuess('1a3', 3, 'dec')).toBe(false);

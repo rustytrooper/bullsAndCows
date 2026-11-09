@@ -15,4 +15,10 @@ export const createDigitValidator =
     return allowed.has(char.toLowerCase());
   };
 
-export const isValidGuess = () => {};
+export const isValidGuess = (guess: string, length: number, base: Base): boolean => {
+  const isValidChar = createDigitValidator(base);
+  const hasValidLength = guess.length === length;
+  const hasOnlyAllowedChars = [...guess].every(isValidChar);
+  const hasUniqueChars = new Set([...guess].map((c) => c.toLowerCase())).size === guess.length;
+  return hasValidLength && hasOnlyAllowedChars && hasUniqueChars;
+};
