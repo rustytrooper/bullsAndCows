@@ -57,3 +57,5 @@ export const countPossibleSecrets = (length: number, base: Base): number => {
   cache.set(key, result);
   return result;
 };
+
+export const generateSecret = () => {};
