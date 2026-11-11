@@ -81,3 +81,6 @@ export const generateSecret = (
 ): string => {
   return pickRecursive([...ALPHABET[base]], length, random);
 };
+
+export const getAvailableLengths = (base: Base): number[] =>
+  [2, 3, 4, 5, 6].filter((len) => len <= BASE_SIZE[base]);
