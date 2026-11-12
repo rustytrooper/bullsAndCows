@@ -13,7 +13,8 @@ export type GameState = {
   finishedAt?: number;
 };
 
-export type AppState = { screen: 'settings' } | { screen: 'game'; game: GameState };
+export type AppState =
+  { screen: 'settings' } | { screen: 'game'; game: GameState; inputError: string | null };
 
 export const createGameState = (
   settings: Settings,
