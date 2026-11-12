@@ -1,9 +1,9 @@
-import { generateSecret, isValidGuess } from './core/core';
-import { applyGuess, createGameState, isDuplicateGuess, isWon } from './state';
-import type { AppState, Settings } from './state';
-import { loadRecords, saveRecord } from './records';
-import { settingsScreen } from './ui/settingsScreen';
-import { gameScreen } from './ui/gameScreen';
+import { generateSecret, isValidGuess } from './core/core.js';
+import { applyGuess, createGameState, isDuplicateGuess, isWon } from './state.js';
+import type { AppState, Settings } from './state.js';
+import { loadRecords, saveRecord } from './records.js';
+import { settingsScreen } from './ui/settingsScreen.js';
+import { gameScreen } from './ui/gameScreen.js';
 
 let state: AppState = { screen: 'settings' };
 

@@ -1,9 +1,9 @@
-import { countPossibleSecrets, getAvailableLengths } from '../core/core';
-import { el, setAttrs } from './dom';
-import { recordsSection } from './recordsSection';
-import type { Record } from '../records';
-import type { Settings } from '../state';
-import { Base } from '../types';
+import { countPossibleSecrets, getAvailableLengths } from '../core/core.js';
+import { el, setAttrs } from './dom.js';
+import { recordsSection } from './recordsSection.js';
+import type { Record } from '../records.js';
+import type { Settings } from '../state.js';
+import { Base } from '../types.js';
 
 type SettingsHandlers = {
   onStart: (settings: Settings) => void;

@@ -1,15 +1,11 @@
-// import { createDigitValidator, isWon as isGameWon } from '../../core';
-// import type { Attempt } from '../../core';
-// import type { GameState } from '../../state';
-// import type { Record } from '../../records';
-import { createDigitValidator } from '../core/core';
-import { Record } from '../records';
-import { GameState } from '../state';
-import { Attempt } from '../types';
-import { el, setAttrs } from './dom';
-import { formatTime } from './format';
-import { recordsSection } from './recordsSection';
-import { isWon as isGameWon } from '../state';
+import { createDigitValidator } from '../core/core.js';
+import { Record } from '../records.js';
+import { GameState } from '../state.js';
+import { Attempt } from '../types.js';
+import { el, setAttrs } from './dom.js';
+import { formatTime } from './format.js';
+import { recordsSection } from './recordsSection.js';
+import { isWon as isGameWon } from '../state.js';
 
 type GameHandlers = {
   onGuess: (guess: string) => void;

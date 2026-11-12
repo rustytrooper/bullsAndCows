@@ -1,5 +1,5 @@
-import { evaluateGuess } from './core/core';
-import { Attempt, Base } from './types';
+import { evaluateGuess } from './core/core.js';
+import { Attempt, Base } from './types.js';
 
 export type Settings = { length: number; base: Base };
 export type Status = 'playing' | 'won';

@@ -1,6 +1,6 @@
-import type { Record } from '../records';
-import { el } from './dom';
-import { formatDate, formatTime } from './format';
+import type { Record } from '../records.js';
+import { el } from './dom.js';
+import { formatDate, formatTime } from './format.js';
 
 const recordItem = (record: Record): HTMLElement => {
   const badge = el('span', 'records__badge', `${record.base} · ${record.length}`);

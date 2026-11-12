@@ -1,4 +1,4 @@
-import { Base, BullsCows } from '../types';
+import { Base, BullsCows } from '../types.js';
 
 const DIGITS_BY_BASE: Record<Base, ReadonlySet<string>> = {
   bin: new Set('01'),

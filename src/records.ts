@@ -1,4 +1,4 @@
-import { Base } from './types';
+import { Base } from './types.js';
 
 export type Record = {
   length: number;

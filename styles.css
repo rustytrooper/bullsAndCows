@@ -1,0 +1,298 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.game-screen__history { list-style: none; padding: 0; }
+.game-screen__bull { color: green; }
+.game-screen__cow { color: orange; }
+.records__list { list-style: none; padding: 0; }
+
+:root {
+  --bg-color: #f4f7f6;
+  --text-main: #2c3e50;
+  --text-muted: #7f8c8d;
+  --primary: #3498db;
+  --primary-hover: #2980b9;
+  --success: #27ae60;
+  --warning: #f39c12;
+  --error: #e74c3c;
+  --border: #dcdde1;
+  --card-bg: #ffffff;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#app, body > section {
+  width: 100%;
+  max-width: 600px;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1, h2, h3 {
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+h1 { font-size: 1.8rem; text-align: center; }
+h2 { font-size: 1.4rem; text-align: center; }
+h3 { font-size: 1.2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+
+
+.settings-screen__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.settings-screen__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings-screen__label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.settings-screen__select {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.settings-screen__select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.settings-screen__hint {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  background: #f8f9fa;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+}
+
+.settings-screen__button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.settings-screen__button:hover { background: var(--primary-hover); }
+.settings-screen__button:active { transform: scale(0.98); }
+
+.game-screen__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.game-screen__settings-badge {
+  background: var(--primary);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.game-screen__button--new {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.game-screen__button--new:hover {
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.game-screen__form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.game-screen__input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.game-screen__input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.game-screen__button {
+  padding: 0 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.game-screen__button:hover { background: var(--primary-hover); }
+
+.game-screen__error {
+  color: var(--error);
+  background: #fdeaea;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.game-screen__history {
+  list-style: none;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fafafa;
+}
+
+.game-screen__history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.game-screen__history-item:last-child { border-bottom: none; }
+
+.game-screen__guess {
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.game-screen__bull {
+  color: var(--success);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.game-screen__cow {
+  color: var(--warning);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.game-screen__win {
+  background: #eafaf1;
+  border: 2px solid var(--success);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+.game-screen__win-title {
+  color: var(--success);
+  margin-bottom: 0.5rem;
+}
+.game-screen__win-attempts,
+.game-screen__win-time {
+  font-size: 1.1rem;
+  margin: 0.25rem 0;
+}
+
+.records {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+}
+
+.records__list {
+  list-style: none;
+}
+
+.records__item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+.records__item:last-child { border-bottom: none; }
+
+.records__badge {
+  background: #ecf0f1;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.records__attempts,
+.records__time {
+  font-weight: 600;
+}
+.records__date {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.records__empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 1rem;
+}
